@@ -1,0 +1,128 @@
+{
+  "raw_row_count": 1048575,
+  "columns": {
+    "Accident_Index": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "longitude": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "latitude": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Police_Force": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Accident_Severity": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Number_of_Vehicles": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Number_of_Casualties": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Day_of_Week": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Time": {
+      "missing_count": 988578,
+      "missing_pct": 94.278
+    },
+    "Local_Authority_(District)": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Local_Authority_(Highway)": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "1st_Road_Class": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "1st_Road_Number": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Road_Type": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Speed_limit": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Junction_Detail": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Junction_Control": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "2nd_Road_Class": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "2nd_Road_Number": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Pedestrian_Crossing-Human_Control": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Pedestrian_Crossing-Physical_Facilities": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Light_Conditions": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Weather_Conditions": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Road_Surface_Conditions": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Special_Conditions_at_Site": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Carriageway_Hazards": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Urban_or_Rural_Area": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "Did_Police_Officer_Attend_Scene_of_Accident": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    },
+    "LSOA_of_Accident_Location": {
+      "missing_count": 988674,
+      "missing_pct": 94.287
+    },
+    "Date": {
+      "missing_count": 988577,
+      "missing_pct": 94.278
+    }
+  },
+  "duplicate_accident_index_groups": 1,
+  "clean_row_count": 59998,
+  "rows_dropped": 988577
+}

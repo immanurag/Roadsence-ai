@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Primary — lavender / mauve purple */
+  --color-brand-50: #faf7fd;
+  --color-brand-100: #f2ebfa;
+  --color-brand-200: #e4d3f5;
+  --color-brand-300: #d0b0ec;
+  --color-brand-400: #b784e0;
+  --color-brand-500: #9d5fd4;
+  --color-brand-600: #8542bf;
+  --color-brand-700: #6b349b;
+  --color-brand-800: #542a79;
+  --color-brand-900: #3f2059;
+
+  /* Mauve — secondary pink-purple accent */
+  --color-mauve-100: #f7e9f2;
+  --color-mauve-300: #e8b8db;
+  --color-mauve-400: #dd93ca;
+  --color-mauve-500: #cc6bb0;
+
+  /* AI — electric indigo/cyan, reserved for Gemini-powered surfaces only,
+     so generated content is always visually distinct from static analytics */
+  --color-ai-100: #e8eefd;
+  --color-ai-300: #a9bdf8;
+  --color-ai-400: #7d94f2;
+  --color-ai-500: #5468ea;
+  --color-ai-600: #4552c9;
+  --color-ai-cyan: #4fd6d0;
+
+  /* Safe / good — soft green (severity: Slight, risk: Low) */
+  --color-mint-400: #7bd6ad;
+  --color-mint-500: #4dbb8a;
+
+  /* Caution — soft amber (severity: Serious, risk: Moderate/High) */
+  --color-amber-400: #f5c778;
+  --color-amber-500: #e8a83e;
+
+  /* Danger — soft rose/coral (severity: Fatal, risk: Critical) */
+  --color-coral-400: #f5a0ab;
+  --color-coral-500: #ec6b82;
+  --color-coral-600: #d94569;
+
+  /* Neutrals — tinted slightly purple for cohesion */
+  --color-ink-50: #faf8fc;
+  --color-ink-100: #f0eaf7;
+  --color-ink-400: #9187a3;
+  --color-ink-600: #5e5470;
+  --color-ink-800: #362d47;
+  --color-ink-900: #241d33;
+
+  --shadow-glossy: 0 1px 1px rgba(84, 42, 121, 0.05), 0 8px 24px -8px rgba(84, 42, 121, 0.2), inset 0 1px 0 rgba(255,255,255,0.6);
+  --shadow-island: 0 10px 40px -12px rgba(84, 42, 121, 0.35);
+  --shadow-ai-glow: 0 1px 1px rgba(69, 82, 201, 0.06), 0 12px 32px -10px rgba(84, 104, 234, 0.35), inset 0 1px 0 rgba(255,255,255,0.65);
+
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-shimmer: shimmer 1.8s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-gradient: gradient-flow 6s ease infinite;
+  --animate-pulse-ring: pulse-ring 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes gradient-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  @keyframes pulse-ring {
+    0% { box-shadow: 0 0 0 0 rgba(84, 104, 234, 0.35); }
+    70% { box-shadow: 0 0 0 10px rgba(84, 104, 234, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(84, 104, 234, 0); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #f3e8fb 0%, transparent 60%),
+    radial-gradient(1000px 500px at 90% 0%, #fdedf5 0%, transparent 55%),
+    radial-gradient(900px 500px at 50% 100%, #eef1fd 0%, transparent 60%),
+    #faf8fc;
+  color: var(--color-ink-900);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-ink-900);
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.glossy-card {
+  background: linear-gradient(160deg, #ffffff 0%, #faf5fd 100%);
+  box-shadow: var(--shadow-glossy);
+  border: 1px solid rgba(157, 95, 212, 0.1);
+}
+
+.card-hover {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-island);
+}
+
+/* AI surfaces — a distinct gradient border + glow so Gemini-generated
+   content is always visually legible as "AI", not mistaken for the
+   model's raw numeric output */
+.ai-card {
+  position: relative;
+  background: linear-gradient(160deg, #ffffff 0%, #f4f6fe 100%);
+  box-shadow: var(--shadow-ai-glow);
+  border: 1px solid rgba(84, 104, 234, 0.16);
+}
+
+.ai-gradient-text {
+  background: linear-gradient(90deg, var(--color-ai-600), var(--color-ai-500), var(--color-ai-cyan), var(--color-ai-500), var(--color-ai-600));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-gradient);
+}
+
+.ai-badge {
+  background: linear-gradient(90deg, var(--color-ai-600), var(--color-ai-500), var(--color-ai-cyan));
+  background-size: 200% auto;
+  animation: var(--animate-gradient);
+}
+
+.ai-ring {
+  box-shadow: 0 0 0 0 rgba(84, 104, 234, 0.35);
+  animation: var(--animate-pulse-ring);
+}
+
+.shimmer {
+  background: linear-gradient(90deg, var(--color-ink-100) 25%, #ffffff 50%, var(--color-ink-100) 75%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+.mesh-grid {
+  background-image:
+    linear-gradient(rgba(157, 95, 212, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157, 95, 212, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--color-brand-200);
+  border-radius: 999px;
+}
